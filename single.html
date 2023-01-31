@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.2.33/vue.global.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+    <div id="app">  
+        <button @click="increment">Up vote </button> {{count}}  </div>
+
+<script>
+     const app = Vue.createApp({
+        data() {
+            return {count: 4}
+        },
+        methods: {
+            increment() {
+                // `this` 指向该组件实例
+                this.count++
+            }
+        }
+    })
+ 
+    const vm = app.mount('#app')
+    // console.log(vm.data)
+    console.log(vm.count) // => 4
+    vm.increment()
+    console.log(vm.count) // => 5
+</script>
+</body>
+</html>
